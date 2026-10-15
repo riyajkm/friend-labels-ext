@@ -24,4 +24,4 @@ Not affiliated with or endorsed by Meta or Facebook.
 **Remote code:** No.
 **Privacy policy URL:** https://github.com/riyajkm/friend-labels-ext/blob/main/PRIVACY.md
 
-**Assets:** screenshots 1280x800 in this folder (sample data only), promo tile 440x280.
+**Assets:** screenshots 1280x800 in this folder (3 of them) (sample data only), promo tile 440x280.
