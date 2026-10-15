@@ -14,4 +14,4 @@ Friend Labels runs entirely in your browser.
 
 **Permissions:** `storage` / `unlimitedStorage` to save the above locally; host access to `facebook.com` to show labels on the page.
 
-Contact: open an issue at https://github.com/riyajkm/friend-labels/issues
+Contact: open an issue at https://github.com/riyajkm/friend-labels-ext/issues

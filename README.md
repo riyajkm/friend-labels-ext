@@ -18,7 +18,7 @@ _Screenshots use fictional sample data._
 - 100% local: no servers, no analytics, no accounts
 
 ## Install (developer mode)
-1. Download or clone this repo: `git clone https://github.com/riyajkm/friend-labels.git`
+1. Download or clone this repo: `git clone https://github.com/riyajkm/friend-labels-ext.git`
 2. Open `chrome://extensions` and enable **Developer mode**.
 3. Click **Load unpacked** and select this folder.
 4. Open your Facebook Friends page; labels appear on the cards. Click the toolbar icon for the popup, or open the dashboard from the extension options.

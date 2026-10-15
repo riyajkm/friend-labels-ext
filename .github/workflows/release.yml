@@ -1,0 +1,23 @@
+name: Release
+on:
+  push:
+    tags: ["v*"]
+permissions:
+  contents: write
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check manifest version matches tag
+        run: |
+          V=$(python3 -c "import json;print(json.load(open('manifest.json'))['version'])")
+          [ "v$V" = "${GITHUB_REF_NAME}" ] || { echo "manifest $V != tag ${GITHUB_REF_NAME}"; exit 1; }
+      - name: Zip extension
+        run: |
+          mkdir -p dist
+          zip dist/friend-labels.zip manifest.json background.js content.js content.css lib.js dashboard.html dashboard.js dashboard.css popup.html popup.js icon16.png icon48.png icon128.png
+      - uses: softprops/action-gh-release@v2
+        with:
+          files: dist/friend-labels.zip
+          generate_release_notes: true

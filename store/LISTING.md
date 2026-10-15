@@ -22,6 +22,6 @@ Not affiliated with or endorsed by Meta or Facebook.
 - storage / unlimitedStorage: save labels, settings, protected list and notes locally.
 - Host access to facebook.com: read friend cards and the user's own posts' reactions to compute labels.
 **Remote code:** No.
-**Privacy policy URL:** https://github.com/riyajkm/friend-labels/blob/main/PRIVACY.md
+**Privacy policy URL:** https://github.com/riyajkm/friend-labels-ext/blob/main/PRIVACY.md
 
 **Assets:** screenshots 1280x800 in this folder (sample data only), promo tile 440x280.
