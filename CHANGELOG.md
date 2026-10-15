@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## 3.0.1 - 2026-10-15
 - Content script now matches only www.facebook.com and web.facebook.com.
 - Added 32px icon; added rules screenshot, site pages (privacy, landing).
 

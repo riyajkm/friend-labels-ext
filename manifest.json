@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Friend Labels",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "Analyses your Facebook friends: Keep / Review / Remove labels, engagement on your posts, protected friends and a full dashboard. Display only.",
   "permissions": ["storage", "unlimitedStorage"],
   "background": { "service_worker": "background.js" },
