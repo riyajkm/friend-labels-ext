@@ -16,7 +16,7 @@ jobs:
       - name: Zip extension
         run: |
           mkdir -p dist
-          zip dist/friend-labels.zip manifest.json background.js content.js content.css lib.js dashboard.html dashboard.js dashboard.css popup.html popup.js icon16.png icon48.png icon128.png
+          zip dist/friend-labels.zip manifest.json background.js content.js content.css lib.js dashboard.html dashboard.js dashboard.css popup.html popup.js icon16.png icon32.png icon48.png icon128.png
       - uses: softprops/action-gh-release@v2
         with:
           files: dist/friend-labels.zip
