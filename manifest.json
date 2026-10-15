@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "Friend Labels",
+  "version": "3.0.0",
+  "description": "Analyses your Facebook friends: Keep / Review / Remove labels, engagement on your posts, protected friends and a full dashboard. Display only.",
+  "permissions": ["storage", "unlimitedStorage"],
+  "background": { "service_worker": "background.js" },
+  "action": { "default_popup": "popup.html", "default_icon": { "16": "icon16.png", "48": "icon48.png", "128": "icon128.png" } },
+  "options_page": "dashboard.html",
+  "icons": { "16": "icon16.png", "48": "icon48.png", "128": "icon128.png" },
+  "content_scripts": [
+    {
+      "matches": ["https://*.facebook.com/*"],
+      "js": ["lib.js", "content.js"],
+      "css": ["content.css"],
+      "run_at": "document_idle"
+    }
+  ]
+}

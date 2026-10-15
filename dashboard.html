@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Friend Labels</title>
+<link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand"><span class="logo" aria-hidden="true"></span><div><h1>Friend Labels</h1><p id="sub">Your Facebook friends, sorted into Keep, Review and Remove.</p></div></div>
+  <div class="top-actions">
+    <a class="btn" id="openFriends" href="https://www.facebook.com/me/friends" target="_blank" rel="noopener">Open friends page</a>
+    <button class="btn primary" id="export">Export CSV</button>
+  </div>
+</header>
+
+<main>
+  <section class="kpis" aria-label="Summary">
+    <div class="kpi"><span>Analysed</span><b id="k-total">0</b></div>
+    <div class="kpi rm"><span>Remove</span><b id="k-Remove">0</b></div>
+    <div class="kpi rv"><span>Review</span><b id="k-Review">0</b></div>
+    <div class="kpi kp"><span>Keep</span><b id="k-Keep">0</b></div>
+    <div class="kpi"><span>Protected ★</span><b id="k-prot">0</b></div>
+    <div class="kpi"><span>Engaged with you</span><b id="k-eng">0</b></div>
+    <div class="kpi"><span>Removed so far</span><b id="k-removed">0</b></div>
+    <div class="kpi today"><span>Removed today</span><b id="k-today">0 / 50</b><div class="meter"><i id="todayMeter"></i></div></div>
+  </section>
+
+  <section class="grid">
+    <article class="panel">
+      <h2>Split</h2>
+      <div class="split" id="split"></div>
+      <ul class="legend" id="legend"></ul>
+    </article>
+    <article class="panel">
+      <h2>Mutual friends</h2>
+      <div class="chart" id="hist" role="img" aria-label="How many friends have each range of mutual friends"></div>
+    </article>
+    <article class="panel">
+      <h2>Why they're flagged</h2>
+      <ul class="reasons" id="reasons"></ul>
+    </article>
+  </section>
+
+  <section class="panel table-panel">
+    <div class="tools">
+      <input type="search" id="q" placeholder="Search names, reasons, work or school" aria-label="Search">
+      <div class="chips" role="group" aria-label="Filter">
+        <button data-f="all" aria-pressed="true">All</button>
+        <button data-f="Remove">Remove</button>
+        <button data-f="Review">Review</button>
+        <button data-f="Keep">Keep</button>
+        <button data-f="prot">★ Protected</button>
+        <button data-f="eng">Engaged</button>
+        <button data-f="flag">Flagged</button>
+        <button data-f="removed">Removed</button>
+      </div>
+      <select id="sort" aria-label="Sort by">
+        <option value="score">Lowest score first</option>
+        <option value="-score">Highest score first</option>
+        <option value="mutual">Fewest mutual first</option>
+        <option value="-mutual">Most mutual first</option>
+        <option value="-eng">Most engagement first</option>
+        <option value="name">Name A–Z</option>
+      </select>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th class="c-star" aria-label="Protected"></th><th>Name</th><th class="num">Mutual</th><th>Photo</th><th class="num">Engaged</th><th>Score</th><th>Suggestion</th><th>Reason &amp; flags</th><th>Note</th></tr></thead>
+        <tbody id="rows"></tbody>
+      </table>
+    </div>
+    <div class="pager"><span id="count"></span><div><button class="btn" id="prev">Previous</button><button class="btn" id="next">Next</button></div></div>
+  </section>
+
+  <section class="grid two">
+    <article class="panel">
+      <h2>Rules</h2>
+      <form id="rules" class="rules">
+        <label for="removeMax">Remove if mutual friends are at most</label><input type="number" id="removeMax" min="0" max="50">
+        <label for="noPhotoRemoveMax">Remove if no photo and mutual at most</label><input type="number" id="noPhotoRemoveMax" min="0" max="100">
+        <label for="reviewMax">Review if mutual friends are at most</label><input type="number" id="reviewMax" min="0" max="300">
+        <label for="dailyLimit">Daily removal limit</label><input type="number" id="dailyLimit" min="10" max="200">
+        <button class="btn primary" type="submit">Save rules</button><span class="saved" id="saved"></span>
+      </form>
+      <p class="hint">Deactivated accounts are always Remove. Anyone who reacts to or comments on your posts is always Keep. Starred friends are always Keep.</p>
+    </article>
+    <article class="panel">
+      <h2>How the score works</h2>
+      <ul class="how">
+        <li><b>Mutual friends</b> up to 55 points. More mutual friends means a real connection.</li>
+        <li><b>Profile photo</b> 15 points. The grey default picture usually means an abandoned account.</li>
+        <li><b>Engagement</b> up to 30 points. Open the reactions list or comments on your own posts and Friend Labels notes who interacted. Use “Scan all reactions” inside a reactions list to read the whole list.</li>
+        <li><b>Removed</b> is detected when you unfriend someone yourself and their card changes to “Add friend”.</li>
+      </ul>
+      <button class="btn danger" id="reset">Clear all data</button><span class="saved" id="resetMsg"></span>
+    </article>
+  </section>
+</main>
+<script src="lib.js"></script>
+<script src="dashboard.js"></script>
+</body></html>

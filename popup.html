@@ -1,0 +1,25 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+:root{--bg:#f2f4f3;--card:#fff;--fg:#152019;--muted:#5b6a64;--line:#dde4e1;--accent:#1f7a5c;--rm:#c2412f;--rv:#a36d0c;--kp:#1f7a5c}
+@media (prefers-color-scheme:dark){:root{--bg:#101614;--card:#18201d;--fg:#e5ece9;--muted:#97a6a0;--line:#2b3733;--accent:#5bc79f;--rm:#f08c78;--rv:#e7bb62;--kp:#5bc79f}}
+body{width:300px;margin:0;padding:14px;font:13px/1.45 ui-sans-serif,"Segoe UI",system-ui,sans-serif;color:var(--fg);background:var(--bg);display:grid;gap:10px}
+h1{font-size:15px;margin:0}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+.s{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:8px;text-align:center}
+.s b{display:block;font:600 17px ui-monospace,Menlo,monospace}
+.s span{font-size:11px;color:var(--muted)}
+.s.rm b{color:var(--rm)}.s.rv b{color:var(--rv)}.s.kp b{color:var(--kp)}
+.muted{color:var(--muted);font-size:12px}
+a,button{display:block;text-align:center;padding:8px;border-radius:9px;border:1px solid var(--line);background:var(--card);color:var(--fg);font:600 13px ui-sans-serif,"Segoe UI",system-ui,sans-serif;text-decoration:none;cursor:pointer}
+.primary{background:var(--accent);border-color:var(--accent);color:var(--card)}
+</style></head>
+<body>
+<h1>Friend Labels</h1>
+<div class="stats"><div class="s rm"><b id="rm">–</b><span>Remove</span></div><div class="s rv"><b id="rv">–</b><span>Review</span></div><div class="s kp"><b id="kp">–</b><span>Keep</span></div></div>
+<div class="muted" id="today"></div>
+<button class="primary" id="dash">Open dashboard</button>
+<a id="friends" href="https://www.facebook.com/me/friends" target="_blank" rel="noopener">Open my friends page</a>
+<script src="lib.js"></script>
+<script src="popup.js"></script>
+</body></html>
